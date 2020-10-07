@@ -1,0 +1,392 @@
+/* ---- KEYFRAMES ---- */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---- GLOBAL ---- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#logo,
+nav,
+h2,
+.image-nav a,
+.contact-content label {
+  font-family: "Share Tech", sans-serif;
+}
+
+body,
+ul,
+p {
+  margin: 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 100px;
+}
+
+p {
+  font-family: "Titillium Web", sans-serif;
+  color: #282828;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section {
+  padding: 200px 0;
+}
+
+section:nth-of-type(2n-1) {
+  background-color: #f1f1f1;
+}
+
+/* ---- HEADER ---- */
+
+header {
+  height: 100vh;
+  padding: 50px 75px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.25)),
+    url("header-img.png");
+  background-size: 100%;
+  background-position: 50% 30%;
+  color: white;
+}
+
+@keyframes op-an {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+
+#logo {
+  font-size: 50px;
+  color: inherit;
+}
+
+svg {
+  margin-left: 5px;
+  margin-bottom: -6px;
+}
+
+path,
+.path--first,
+.path--second {
+  stroke-dasharray: 100px;
+  stroke-dashoffset: -100px;
+  animation-timing-function: ease-out;
+  animation: draw-line 3s forwards;
+  stroke: white;
+  fill: none;
+}
+
+.path--first {
+  stroke-dashoffset: 30px;
+  stroke-dasharray: 30px;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* NAV */
+
+nav {
+  width: 30%;
+}
+
+/* hamburger icon */
+
+.hamburger-toggle,
+.hamburger-icon {
+  display: none;
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin-bottom: 5px;
+  border-radius: 1px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+nav ul li {
+  animation: raise 2s ease-in-out;
+}
+
+nav ul li:last-of-type {
+  animation-delay: 0.6s;
+}
+
+nav ul li:nth-of-type(2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes raise {
+  30% {
+    transform: translateY(50px);
+  }
+  65% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ---- WELCOME ---- */
+
+.portfolio h2 {
+  margin-bottom: 0;
+}
+
+.welcome-content {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.welcome-content > * {
+  width: 30%;
+}
+
+.welcome-text {
+  font-size: 29px;
+  line-height: 170%;
+  text-align: center;
+}
+
+/* ---- PORTFOLIO ---- */
+
+.portfolio-content {
+  padding-top: 100px;
+  width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 320px 320px;
+  grid-gap: 30px;
+  animation: fade-in 0.5s;
+}
+
+#less {
+  display: grid;
+}
+
+#more:target ~ #less {
+  display: none;
+}
+
+.image-wrapper {
+  height: 100%;
+}
+
+.portfolio-content img {
+  background-size: 100%;
+}
+
+.image-1 {
+  background-image: url("gallery-1.jpg");
+}
+
+.image-2,
+.image-5 {
+  background-image: url("gallery-2.jpg");
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.image-3,
+.image-6 {
+  background-image: url("gallery-3.png");
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.image-1,
+.image-2,
+.image-3,
+.image-4,
+.image-5,
+.image-6 {
+  animation: fade-in 1s forwards;
+}
+
+.image-nav {
+  display: flex;
+  width: 1000px;
+  margin: 40px auto 0 auto;
+  justify-content: space-between;
+}
+
+.image-nav a {
+  font-size: 25px;
+}
+
+.more {
+  display: block;
+  margin-left: 69%;
+  padding-top: 30px;
+  font-size: 25px;
+}
+
+#more {
+  display: none;
+}
+
+#more:target {
+  display: grid;
+  top: 2367.5px;
+  left: 453px;
+}
+
+/* ---- CONTACT US ---- */
+
+.contact-content {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.contact-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-content label {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.contact-content input,
+.contact-content textarea {
+  background-color: #e6e6e6;
+  border: 1px solid #c8c8c8;
+  margin-bottom: 35px;
+  padding: 15px;
+}
+
+.contact-content textarea {
+  height: 250px;
+}
+
+.contact-content input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  background-color: #454545;
+  color: white;
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+/* ---- FOOTER ---- */
+
+footer {
+  height: 120px;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8));
+  text-align: center;
+  padding-top: 60px;
+  font-size: 23px;
+}
+
+footer p {
+  color: white;
+}
+
+/* "TO TOP" BUTTON */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+#topBtn {
+  display: none; /* Hidden by default */
+  opacity: 0; /* To make the fade in animation */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #454545; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 10px 30px; /* Some padding */
+  animation: fade-in 1s;
+  animation-fill-mode: forwards;
+}
+
+/* DARK THEME */
+
+.dark p,
+.dark h2,
+.dark label {
+  color: white;
+}
+
+.dark header {
+  background: linear-gradient(rgba(40, 40, 40, 0.25), rgba(40, 40, 40, 0.7)),
+    url("header-img.png");
+}
+
+.dark section:nth-of-type(2n-1) {
+  background-color: #282828;
+}
